@@ -134,14 +134,6 @@ for(i in 1:length(grp3)){
 dev.off()
 
 
-### Random Forest
-
-library(randomForest)
-rt.fit = randomForest(x = fm, y = NULL, ntree=10000, proximity = TRUE,
-                      oob.prox = TRUE)
-hclust.rf <- hclust(as.dist(1-rt.fit$proximity), method = "ward.D2")
-rf.cluster = cutree(hclust.rf, k=3)
-
 
 library(metricsgraphics)
 library(readxl)
